@@ -1,8 +1,8 @@
 pipeline {
     agent any
     tools { 
-        maven 'Maven3.3.1' 
-        jdk 'JDK1.8' 
+        maven 'M3' 
+        jdk 'jdk1.8' 
     }
     stages {
         stage ('Initialize') {
@@ -20,7 +20,8 @@ pipeline {
             }
 	    post {
                 success {
-                    junit 'target/surefire-reports/**/*.xml' 
+                    //junit 'target/surefire-reports/**/*.xml' 
+		    sh 'echo success'
                 }
             }
         }
